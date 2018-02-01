@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    parameters {
+    /* parameters {
          string(name: 'tomcat_dev', defaultValue: '192.168.14.133:8888', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: '192.168.14.133:9999', description: 'Production Server')
-    }
+    } */
 
     triggers {
          pollSCM('* * * * *')
