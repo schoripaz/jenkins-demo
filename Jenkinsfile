@@ -23,8 +23,7 @@ stages{
             }
         }
 
-        stage ('Deployments'){
-                stage ('Deploy to Staging'){
+        stage ('Deploy to Staging'){
                     steps {
                         build job: 'Deploy-To-Staging'
                     }
