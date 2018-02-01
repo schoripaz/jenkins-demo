@@ -1,1 +1,1 @@
-Hello, World! Ver 2 (trigger POM SCM)
+Hello, World! Ver 2.1 (trigger POM SCM)
