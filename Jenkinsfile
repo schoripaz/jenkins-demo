@@ -26,7 +26,7 @@ stages{
         stage ('Deployments'){
                 stage ('Deploy to Staging'){
                     steps {
-                        Build job: 'Deploy-To-Staging'
+                        build job: 'Deploy-To-Staging'
                     }
                 }
 
@@ -35,7 +35,7 @@ stages{
                         timeout(time:5, unit:'DAYS'){
                             input message: 'Approve Production Deployment?'
                         }
-                        Build job: 'Deplo-To-Prod'
+                        build job: 'Deplo-To-Prod'
                     }
                 }
         }
