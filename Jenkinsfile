@@ -34,7 +34,7 @@ stages{
                         timeout(time:5, unit:'DAYS'){
                             input message: 'Approve Production Deployment?'
                         }
-                        build job: 'Deplo-To-Prod'
+                        build job: 'Deploy-To-Prod'
                     }
                 }
         }
