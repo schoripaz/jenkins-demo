@@ -7,7 +7,7 @@ pipeline {
     } */
 
     triggers {
-         pollSCM('* * * * *')
+         pollSCM('* 9 * * *')
      }
 
     stages{
