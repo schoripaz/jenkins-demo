@@ -10,7 +10,7 @@ pipeline {
          pollSCM('* * * * *')
      }
 
-stages{
+    stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -24,19 +24,19 @@ stages{
         }
 
         stage ('Deploy to Staging'){
-                    steps {
-                        build job: 'Deploy-To-Staging'
-                    }
-                }
-
-                stage ("Deploy to Prod"){
-                    steps {
-                        timeout(time:5, unit:'DAYS'){
-                            input message: 'Approve Production Deployment?'
-                        }
-                        build job: 'Deploy-To-Prod'
-                    }
-                }
+            steps {
+                build job: 'Deploy-To-Staging'
+            }
         }
+
+            stage ("Deploy to Prod"){
+                steps {
+                    timeout(time:5, unit:'DAYS'){
+                        input message: 'Approve Production Deployment?'
+                    }
+                    build job: 'Deploy-To-Prod'
+                }
+            }
     }
 }
+
